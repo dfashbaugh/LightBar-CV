@@ -1,0 +1,89 @@
+#include <iostream>
+#include <opencv2/imgproc/imgproc.hpp>
+#include <opencv2/highgui/highgui.hpp>
+
+using namespace std;
+using namespace cv;
+
+#define CAMERA_OUTPUT_WINDOW_NAME "camera-output"
+
+int runVideo()
+{
+    CvCapture *camCapture;
+    int ret = 0;
+
+    if (!(camCapture = cvCaptureFromCAM(CV_CAP_ANY))) {
+        cout << "Failed to capture from camera" << endl; 
+
+        ret = 1;
+
+        goto exitCameraOpenFailed;
+    }
+
+    cout << "Camera opened successfully" << endl;
+
+    //cvNamedWindow(CAMERA_OUTPUT_WINDOW_NAME, CV_WINDOW_AUTOSIZE);
+    namedWindow( "Video", WINDOW_AUTOSIZE);
+
+    IplImage *cameraFrame;
+    int grabFrameRet;
+
+    while (true) {
+
+        if ((cameraFrame = cvQueryFrame(camCapture))) {
+            Mat myImage = cv::cvarrToMat(cameraFrame);
+            //medianBlur(myImage, myImage, 11);
+            //threshold(myImage, myImage, 160, 255, THRESH_BINARY);
+
+            cvtColor(myImage,myImage,CV_BGR2HSV);
+            inRange(myImage,Scalar(130,60,90),Scalar(255,255,255),myImage); 
+            imshow("Video", myImage);
+            //cvShowImage(CAMERA_OUTPUT_WINDOW_NAME, cameraFrame);
+        }
+
+        if (cvWaitKey(60) != -1) {
+            cout << "Input" << endl;
+            break;
+        }
+    }
+
+    cout << "Done" << endl;
+
+    cvReleaseCapture(&camCapture); 
+    cvDestroyWindow(CAMERA_OUTPUT_WINDOW_NAME);
+exitCameraOpenFailed:
+    return ret;
+}
+
+int runSingleImage()
+{
+    // Read in image and set scale
+    Mat myImage = imread("barRed.jpg");
+    double displayScale = 0.2;
+
+    // Display UnProcessed Image
+    namedWindow("Unprocessed Image", WINDOW_NORMAL);
+    Mat dispImage;
+    Size size(myImage.size().width * displayScale, myImage.size().height * displayScale);
+    resize(myImage, dispImage, size);
+    imshow("Unprocessed Image", dispImage);
+
+    // Process Image
+    //medianBlur(myImage, myImage, 31);
+
+    // Display Processed Image
+    namedWindow("Processed Image", WINDOW_NORMAL);
+    resize(myImage, dispImage, size);
+    imshow("Processed Image", dispImage);
+
+
+    waitKey();
+
+    return 0;
+}
+
+int main(int argc, char **argv)
+{
+    //return runVideo();
+    return runSingleImage();
+}
