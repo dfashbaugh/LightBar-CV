@@ -9,6 +9,23 @@ using namespace cv;
 #define OUTPUT_WINDOW_SCALAR 0.2
 //#define RUN_VIDEO
 
+Mat findRed (Mat myImage)
+{
+    medianBlur(myImage, myImage, 31);
+    cvtColor(myImage,myImage,CV_BGR2HSV);
+    inRange(myImage,Scalar(0,0,240),Scalar(255,255,255),myImage); 
+
+    return myImage;
+}
+
+Mat findGreen (Mat myImage)
+{
+    cvtColor(myImage,myImage,CV_BGR2HSV);
+    inRange(myImage,Scalar(36,90,183),Scalar(169,255,255),myImage); 
+
+    return myImage;
+}
+
 int runVideo()
 {
     CvCapture *camCapture;
@@ -60,7 +77,7 @@ exitCameraOpenFailed:
 int runSingleImage()
 {
     // Read in image and set scale
-    Mat myImage = imread("barRed.jpg");
+    Mat myImage = imread("barGreen.jpg");
     double displayScale = OUTPUT_WINDOW_SCALAR;
 
     // Display UnProcessed Image
@@ -71,7 +88,10 @@ int runSingleImage()
     imshow("Unprocessed Image", dispImage);
 
     // Process Image
-    //medianBlur(myImage, myImage, 31);
+    //medianBlur(myImage, myImage, 17);
+    //threshold(myImage, myImage, 160, 255, THRESH_BINARY);
+    
+    myImage = findGreen(myImage);
 
     // Display Processed Image
     namedWindow("Processed Image", WINDOW_NORMAL);
