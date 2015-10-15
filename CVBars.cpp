@@ -20,6 +20,7 @@ Mat findRed (Mat myImage)
 
 Mat findGreen (Mat myImage)
 {
+    medianBlur(myImage, myImage, 31);
     cvtColor(myImage,myImage,CV_BGR2HSV);
     inRange(myImage,Scalar(36,90,183),Scalar(169,255,255),myImage); 
 
