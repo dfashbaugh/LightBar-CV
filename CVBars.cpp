@@ -6,6 +6,8 @@ using namespace std;
 using namespace cv;
 
 #define CAMERA_OUTPUT_WINDOW_NAME "camera-output"
+#define OUTPUT_WINDOW_SCALAR 0.2
+//#define RUN_VIDEO
 
 int runVideo()
 {
@@ -21,8 +23,6 @@ int runVideo()
     }
 
     cout << "Camera opened successfully" << endl;
-
-    //cvNamedWindow(CAMERA_OUTPUT_WINDOW_NAME, CV_WINDOW_AUTOSIZE);
     namedWindow( "Video", WINDOW_AUTOSIZE);
 
     IplImage *cameraFrame;
@@ -32,13 +32,15 @@ int runVideo()
 
         if ((cameraFrame = cvQueryFrame(camCapture))) {
             Mat myImage = cv::cvarrToMat(cameraFrame);
+
+            // Process Image
             //medianBlur(myImage, myImage, 11);
             //threshold(myImage, myImage, 160, 255, THRESH_BINARY);
-
             cvtColor(myImage,myImage,CV_BGR2HSV);
             inRange(myImage,Scalar(130,60,90),Scalar(255,255,255),myImage); 
+            
+            // Display Image
             imshow("Video", myImage);
-            //cvShowImage(CAMERA_OUTPUT_WINDOW_NAME, cameraFrame);
         }
 
         if (cvWaitKey(60) != -1) {
@@ -59,7 +61,7 @@ int runSingleImage()
 {
     // Read in image and set scale
     Mat myImage = imread("barRed.jpg");
-    double displayScale = 0.2;
+    double displayScale = OUTPUT_WINDOW_SCALAR;
 
     // Display UnProcessed Image
     namedWindow("Unprocessed Image", WINDOW_NORMAL);
@@ -76,7 +78,6 @@ int runSingleImage()
     resize(myImage, dispImage, size);
     imshow("Processed Image", dispImage);
 
-
     waitKey();
 
     return 0;
@@ -84,6 +85,9 @@ int runSingleImage()
 
 int main(int argc, char **argv)
 {
-    //return runVideo();
+#ifdef RUN_VIDEO
+    return runVideo();
+#else
     return runSingleImage();
+#endif 
 }
