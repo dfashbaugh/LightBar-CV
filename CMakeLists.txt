@@ -1,0 +1,6 @@
+cmake_minimum_required(VERSION 2.8)
+project( CVBars )
+find_package( OpenCV )
+include_directories( ${OpenCV_INCLUDE_DIRS} )
+add_executable( CVBars CVBars.cpp )
+target_link_libraries( CVBars ${OpenCV_LIBS} )
