@@ -1,4 +1,4 @@
-# Install script for directory: /Users/dylan/Documents/ElsewhereStuff/ComputerVisionBars
+# Install script for directory: /Users/jamesdevito/Projects/Elsewhere BK/LightBar-CV
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -35,5 +35,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/Users/dylan/Documents/ElsewhereStuff/ComputerVisionBars/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/Users/jamesdevito/Projects/Elsewhere BK/LightBar-CV/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

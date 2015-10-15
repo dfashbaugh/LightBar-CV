@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/Users/dylan/Documents/ElsewhereStuff/ComputerVisionBars/CVBars.cpp" "/Users/dylan/Documents/ElsewhereStuff/ComputerVisionBars/CMakeFiles/CVBars.dir/CVBars.cpp.o"
+  "/Users/jamesdevito/Projects/Elsewhere BK/LightBar-CV/CVBars.cpp" "/Users/jamesdevito/Projects/Elsewhere BK/LightBar-CV/CMakeFiles/CVBars.dir/CVBars.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "Clang")
 
@@ -17,6 +17,3 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
   )
-
-# Fortran module output directory.
-set(CMAKE_Fortran_TARGET_MODULE_DIR "")
