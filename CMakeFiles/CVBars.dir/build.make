@@ -60,15 +60,15 @@ include CMakeFiles/CVBars.dir/flags.make
 CMakeFiles/CVBars.dir/CVBars.cpp.o: CMakeFiles/CVBars.dir/flags.make
 CMakeFiles/CVBars.dir/CVBars.cpp.o: CVBars.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dylan/Documents/ElsewhereStuff/ComputerVisionBars/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/CVBars.dir/CVBars.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/CVBars.dir/CVBars.cpp.o -c /Users/dylan/Documents/ElsewhereStuff/ComputerVisionBars/CVBars.cpp
+	/usr/bin/gcc   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/CVBars.dir/CVBars.cpp.o -c /Users/dylan/Documents/ElsewhereStuff/ComputerVisionBars/CVBars.cpp
 
 CMakeFiles/CVBars.dir/CVBars.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/CVBars.dir/CVBars.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/dylan/Documents/ElsewhereStuff/ComputerVisionBars/CVBars.cpp > CMakeFiles/CVBars.dir/CVBars.cpp.i
+	/usr/bin/gcc  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/dylan/Documents/ElsewhereStuff/ComputerVisionBars/CVBars.cpp > CMakeFiles/CVBars.dir/CVBars.cpp.i
 
 CMakeFiles/CVBars.dir/CVBars.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CVBars.dir/CVBars.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/dylan/Documents/ElsewhereStuff/ComputerVisionBars/CVBars.cpp -o CMakeFiles/CVBars.dir/CVBars.cpp.s
+	/usr/bin/gcc  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/dylan/Documents/ElsewhereStuff/ComputerVisionBars/CVBars.cpp -o CMakeFiles/CVBars.dir/CVBars.cpp.s
 
 CMakeFiles/CVBars.dir/CVBars.cpp.o.requires:
 

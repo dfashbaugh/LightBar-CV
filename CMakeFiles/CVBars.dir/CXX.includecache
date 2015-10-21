@@ -9,9 +9,13 @@
 /Users/dylan/Documents/ElsewhereStuff/ComputerVisionBars/CVBars.cpp
 iostream
 -
+vector
+-
 opencv2/imgproc/imgproc.hpp
 -
 opencv2/highgui/highgui.hpp
+-
+opencv2/features2d.hpp
 -
 
 /usr/local/include/opencv/cxcore.h
