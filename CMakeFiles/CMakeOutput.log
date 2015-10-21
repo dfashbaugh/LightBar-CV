@@ -446,3 +446,4 @@ Linking CXX executable cmTC_d15c8
     Feature record: CXX_FEATURE:0cxx_variable_templates
     Feature record: CXX_FEATURE:0cxx_variadic_macros
     Feature record: CXX_FEATURE:0cxx_variadic_templates
+The system is: Darwin - 14.0.0 - x86_64

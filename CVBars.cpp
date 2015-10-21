@@ -58,7 +58,7 @@ Mat findGreen (Mat myImage)
     detector->detect( myImage/*hsv_channels[2]*/, keypoints);
 
     printf("Keypoints Found %lu... OpenCV Version %d\n", keypoints.size(), CV_MAJOR_VERSION);
- 
+  
     // Draw detected blobs as red circles.
     // DrawMatchesFlags::DRAW_RICH_KEYPOINTS flag ensures the size of the circle corresponds to the size of blob
     Mat im_with_keypoints;
